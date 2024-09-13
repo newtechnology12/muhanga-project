@@ -14,8 +14,8 @@
 		{
 			icon: 'ion:mail-outline',
 			text1: 'Need help?',
-			text2: 'elohomerwanda@gmail.com',
-			link: 'mailto:elohomerwanda@gmail.com'
+			text2: 'infinity@gmail.com',
+			link: 'mailto:infinity@gmail.com'
 		}
 		// {
 		// 	icon: 'tdesign:location',

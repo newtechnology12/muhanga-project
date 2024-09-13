@@ -40,7 +40,6 @@
 	import { onAuthStateChanged } from 'firebase/auth';
 	import { auth } from '../config/firebase';
 	import { browser } from '$app/environment';
-	import BottomNavigation from '$lib/components/BottomNavigation.svelte';
 	import { cn } from '../utils/cn';
 
 	// ...
@@ -83,7 +82,5 @@
 	</div>
 	<Footer />
 </QueryClientProvider>
-
-<BottomNavigation />
 
 <!-- <WhatsapWidget /> -->

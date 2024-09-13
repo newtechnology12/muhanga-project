@@ -24,13 +24,13 @@
 			<h2
 				class="text-white -mt-12 text-3xl lg:text-xl leading-[50px] lg:leading-[31px] font-bold capitalize"
 			>
-				Buy and sell cars in Rwanda, connecting directly with buyers and sellers.
+				Buy and sell Land plots in Rwanda, Kigali and other cities.
 			</h2>
 			<p
 				class="text-slate-100 sm:line-clamp-3 line-clamp-3 leading-10 sm:mt-4 mt-6 capitalize font-medium- text-[16px] lg:text-[15px]"
 			>
-				Find the best deals on cars, trucks, motorcycles, and more. Post your ad for free and get
-				the best prices on vehicles,
+				Find the best deals of land plots in Rwanda, Kigali and other cities. We have a wide range
+				of land plots.
 			</p>
 			<div class="mt-5">
 				<form
@@ -65,7 +65,7 @@
 			</div>
 		</div>
 		<img
-			src={'https://www.autobroadcast.com/wp-content/uploads/2022/08/more-than-average-inflation-why-are-used-cars-costing-up-to-10000-more-banner.png'}
+			src={'https://www.justlead.in/upload/propertyimages/JL_1606889256plot2.jpg'}
 			alt=""
 			class="h-full w-full top-0 absolute object-cover object-left"
 		/>

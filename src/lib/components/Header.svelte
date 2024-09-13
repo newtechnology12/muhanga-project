@@ -35,7 +35,7 @@
 		<div class=" items-center w-fit justify-between cursor-pointer flex gap-32 col-span-1">
 			<a href="/">
 				<h1 class="font-semibold text-xl tracking-wider text-orange-500">
-					<img class="h-[40px]" src="/logoinfinity.png" alt="" />
+					<img class="h-[30px]" src="/logoinfinity.png" alt="" />
 				</h1>
 			</a>
 		</div>
@@ -194,7 +194,7 @@
 			<div class="">
 				<a href="/">
 					<h1 class="font-semibold text-lg tracking-wider text-orange-500">
-						<img class="h-9" src="logo.jpg" alt="" />
+						<img class="h-8" src="logoinfinity.png" alt="" />
 					</h1>
 				</a>
 			</div>

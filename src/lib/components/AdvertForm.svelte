@@ -11,21 +11,18 @@
 	import { cn } from '../../utils/cn';
 	import { getDownloadURL, ref, uploadBytes } from 'firebase/storage';
 	import { firestore, storage } from '../../config/firebase';
-	import { authStore } from '../../stores/auth';
-	import { addDoc, collection, doc, getDoc, serverTimestamp, updateDoc } from 'firebase/firestore';
+	import { addDoc, collection, doc, serverTimestamp, updateDoc } from 'firebase/firestore';
 	import { goto } from '$app/navigation';
 	import toast from 'svelte-french-toast';
 	import Select from '$lib/components/form/Select.svelte';
 	import categories from '../../data/categories';
 	import slugify from '../../utils/slugify';
 
-	$: authSession = $authStore;
-
 	export let advert = undefined;
 
 	const handleUpload = (e) => {
 		if (typeof e === 'string') return e;
-		const photoRef = ref(storage, `users/${authSession.user.uid}/adverts/${e.file.name}`);
+		const photoRef = ref(storage, `adverts/${e.file.name}`);
 		return uploadBytes(photoRef, e.file).then(async (snapshot) => {
 			const url = await getDownloadURL(snapshot.ref);
 			return url;
@@ -54,7 +51,6 @@
 		return {
 			name: data?.name || '',
 			category: data?.category || undefined,
-			sub_category: data?.sub_category || undefined,
 			price: data?.price || '',
 			city: data?.city || '',
 			neighborhood: data?.neighborhood || '',
@@ -86,7 +82,6 @@
 		validationSchema: Yup.object().shape({
 			name: Yup.string().required(),
 			category: Yup.string().required(),
-			sub_category: Yup.string().required(),
 			price: Yup.string().required(),
 			// location: Yup.object(),
 			city: Yup.string().required(),
@@ -104,8 +99,6 @@
 			if (!aggree) return alert('You need to first agree terms and condition');
 			try {
 				const images = await Promise.all(values?.images?.map((e) => handleUpload(e)));
-				const sellerSnapshot = await getDoc(doc(firestore, 'users', $authStore.user.uid));
-				const { first_name, last_name, photo, phone, address, createdAt } = sellerSnapshot.data();
 				const q = advert
 					? updateDoc(doc(firestore, 'adverts', advert?.id), {
 							...values,
@@ -122,16 +115,7 @@
 							createdAt: serverTimestamp(),
 							// category: slugify(values.category),
 							category: 'vehicles',
-							updatedAt: serverTimestamp(),
-							author: {
-								id: $authStore.user.uid,
-								first_name,
-								last_name,
-								photo: photo || '',
-								phone,
-								address: address || '',
-								createdAt: createdAt || serverTimestamp()
-							}
+							updatedAt: serverTimestamp()
 					  });
 				return q
 					.then((e) => {
@@ -150,10 +134,6 @@
 			}
 		}
 	});
-
-	$: activeSubCategories = $form.category
-		? categories.find((e) => e.slug === $form.category)?.subcategories || []
-		: [];
 
 	let aggree = false;
 </script>
@@ -206,7 +186,7 @@
 							label="Advert name"
 						/>
 					</div>
-					<div class="grid grid-cols-2 gap-3">
+					<div class="grid grid-cols-1 gap-3">
 						<Select
 							on:change={handleChange}
 							on:blur={handleBlur}
@@ -216,16 +196,6 @@
 							name="category"
 							placeholder="Choose category"
 							label="Advert category"
-						/>
-						<Select
-							on:keyup={handleChange}
-							on:blur={handleBlur}
-							bind:value={$form.sub_category}
-							error={$errors.sub_category && $touched.sub_category ? $errors.sub_category : ''}
-							options={activeSubCategories.map((e) => ({ label: e.text, value: e.slug }))}
-							name="sub_category"
-							placeholder="Choose sub category"
-							label="Choose sub category"
 						/>
 					</div>
 					<div class="grid grid-cols-3 gap-3 lg:grid-cols-2">
