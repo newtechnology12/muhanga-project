@@ -222,10 +222,6 @@
 							<!-- first div -->
 							<div class="flex gap-3 items-center">
 								<div class="flex gap-2 text-slate-500 font-medium items-center">
-									<Icon icon="octicon:clock-16" class="text-[13px] font-bold" />
-									<p class="text-xs">{dayjs(advert.author.createdAt).fromNow()}</p>
-								</div>
-								<div class="flex gap-2 text-slate-500 font-medium items-center">
 									<Icon icon="akar-icons:location" class="text-base font-bold" />
 									<p class="text-xs capitalize">{advert.city}</p>
 								</div>
@@ -260,9 +256,6 @@
 										<div class="space-y-3">
 											<p class="text-xs text-slate-700 font-medium capitalize underline">
 												Kigali, Rwanda
-											</p>
-											<p class="text-[13px] truncate font-medium text-slate-600 mt-1">
-												{truncateString(advert?.author?.address || 'No address available', 60)}
 											</p>
 										</div>
 										<!-- <div class="mt-3 space-y-2">

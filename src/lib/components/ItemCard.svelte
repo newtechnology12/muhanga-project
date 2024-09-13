@@ -129,27 +129,6 @@
 		class="group flex flex-col justify-between h-fit flex-1 bg-slate-100- cursor-pointer text-start"
 	>
 		<div class="space-y-2 mt-[8px] pb-2">
-			<div
-				class="flex my-1 mb-2 space-y-2 px-[7px] items-start justify-between flex-col lg:items-start"
-			>
-				<a
-					href={`/categories/${category}`}
-					class="text-gray-500 truncate block line-clamp-1 hover:underline bg-slate-100 border border-slate-200 border-opacity-30 font-medium- px-2 py-[2px] text-[12px] rounded-sm capitalize"
-				>
-					{truncateString(categories?.find((e) => e.slug === category)?.text || category, 25)}
-				</a>
-				{#if author}
-					<a
-						href={`/profile/${author?.id}`}
-						class="hover:underline truncate px-1 items-center gap-2 text-slate-600"
-					>
-						<!-- <MapPinIcon size={'13'} class="text-[13px]" /> -->
-						<span class="text-[12.5px] capitalize font-medium-">
-							{author?.first_name + ' ' + author?.last_name}
-						</span>
-					</a>
-				{/if}
-			</div>
 			<a
 				href={`/adverts/${id}`}
 				class="font-semibold capitalize truncate sm:line-clamp-2 sm:text-[12px] leading-7 line-clamp-1 hover:text-[#f0b111] block px-2 mt-1 text-[13px]"

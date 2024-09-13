@@ -47,15 +47,6 @@
 		</div>
 
 		<div class="flex gap-7 items-center cursor-pointer">
-			<div>
-				<a
-					href={authSession?.user?.uid ? '/new-advert' : '/login'}
-					class="px-5 flex items-center gap-3 py-2 capitalize font-normal bg-white text-[#f2b427]- hover:bg-orange-400- duration-300 ounded-sm text-[13px]"
-				>
-					<span> Post your ad </span>
-					<PlusCircleIcon size={'17'} class="text-lg" />
-				</a>
-			</div>
 			<div class="flex items-center gap-5">
 				<a href="https://facebook.com" target="_blank">
 					<svg

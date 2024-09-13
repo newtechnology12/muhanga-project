@@ -3,7 +3,7 @@
 		'A market place to buy, rent or sell cars your properties very easy without any commmition';
 	export let title = '';
 
-	const pageTitle = `Elo Dreams - ${
+	const pageTitle = `Property invetment - ${
 		title || 'Post, Sell and connect with Buyers & sellers in Rwanda'
 	}`;
 </script>

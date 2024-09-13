@@ -13,8 +13,7 @@ export async function load({ params }) {
 		...advert.data(),
 		id: advert.id,
 		createdAt: advert.data().createdAt?.toDate(),
-		updatedAt: advert.data().updatedAt?.toDate(),
-		author: { ...advert.data().author, createdAt: advert.data().author.createdAt?.toDate() }
+		updatedAt: advert.data().updatedAt?.toDate()
 	};
 	return {
 		advert: data
