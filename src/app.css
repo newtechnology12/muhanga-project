@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Outfit:wght@400;500;600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+	@apply !bg-slate-50;
+}
+
+.capitalize-first:first-letter {
+	text-transform: uppercase;
+}
+
+.svelte-lightbox-header button {
+	@apply !text-[30px];
+}
+.svelte-lightbox-main {
+	@apply px-3;
+}
+.previous-button svg {
+	@apply bg-white cursor-pointer border-slate-300 shadow-xl border rounded-sm  pl-2 py-1 !h-[2rem];
+}
+.next-button svg {
+	@apply bg-white  cursor-pointer ml-auto border-slate-300 shadow-xl border rounded-sm  pr-2 py-1 !h-[2rem];
+}
+.svelte-lightbox-body img {
+	@apply rounded-[7px];
+}
+.svelte-lightbox-footer {
+	display: none !important;
+	font-size: 13px !important;
+	margin-top: 10px !important;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+.embla {
+	overflow: hidden;
+}
+.embla__container {
+	display: flex;
+}
+.embla__slide {
+	flex: 0 0 20%;
+	min-width: 0;
+	margin-right: 10px;
+}
+
+@media (max-width: 1100px) {
+	.embla__slide {
+		flex: 0 0 25% !important; /* Breakpoint SM slide covers 50% of the viewport */
+	}
+}
+
+@media (max-width: 890px) {
+	.embla__slide {
+		flex: 0 0 35% !important; /* Breakpoint SM slide covers 50% of the viewport */
+	}
+}
+
+@media (max-width: 600px) {
+	.embla__slide {
+		flex: 0 0 45% !important; /* Breakpoint SM slide covers 50% of the viewport */
+	}
+}
+@media (max-width: 600px) {
+	.embla__slide {
+		margin-right: 7px;
+	}
+}
+#nprogress .bar {
+	background: white !important;
+	height: 10px;
+}
